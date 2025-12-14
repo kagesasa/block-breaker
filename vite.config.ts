@@ -1,8 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/block-breaker/',  // ← この行を追加！
+  // Change to absolute path matching the repository name for GitHub Pages
+  base: '/block-breaker/',
+  build: {
+    outDir: 'docs', // Build to /docs folder for easy GitHub Pages setup
+  },
 })
